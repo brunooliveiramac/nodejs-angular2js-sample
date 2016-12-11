@@ -1,6 +1,13 @@
 var express = require('express')();
 var consign = require('consign');
 var bodyParser = require('body-parser');
+
+//express configuration
+//middleware - filters 
+//make public the express instance
+ 
+express.set('secret', 'onurbolivbrua'); // <-- environment variable
+express.use(express.static('./public')); //share public folder, all project resource etc..
 express.use(bodyParser.json()); // <-- module used in order to popule the body from req
 
 
